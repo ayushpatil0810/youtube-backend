@@ -7,7 +7,7 @@ const videoSchema = new Schema(
       type: String,
       required: true,
     },
-    thubmnail: {
+    thumbnail: {
       type: String,
       required: true,
     },
@@ -28,7 +28,7 @@ const videoSchema = new Schema(
       required: true,
     },
     isPublished: {
-      type: Number,
+      type: Boolean,
       default: true,
     },
     owner: {
@@ -41,6 +41,6 @@ const videoSchema = new Schema(
   },
 );
 
-videoSchema.plugin(mongooseAggregatePaginate)
+videoSchema.plugin(mongooseAggregatePaginate);
 
 export const Video = model("Video", videoSchema);
